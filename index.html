@@ -1,0 +1,193 @@
+<!--
+Author: Jared Street
+Program: Balittle
+Date: 02/20/25
+Refer to the README for documentation
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+    <title>Balittle</title>
+</head>
+<body>
+    
+
+
+    <div class="start_screen screen"> <!--START SCREEN-->
+        <h1>BALITTLE</h1>
+        
+        <button id="startGameButton" type="button">START GAME</button>
+        <button class="help_button" type="button">HELP</button>
+
+    </div>
+
+    <div class="tarot_screen screen" style="display: none;"> <!--TAROT SELECTION SCREEN-->
+        <h2>TAROT SELECTION</h2>
+        <p>Select three tarot cards to enhance your deck.</p>
+
+        <div class="tarot_slots">
+            <p></p>
+        </div>
+
+        <div class="tarot_selection">
+            <p>Tarot options go here</p>
+        </div>
+
+        <button class="select_tarot" type="button">Take Selected Tarots</button>
+        <button class="help_button" type="button">HELP</button>
+        <button id="resetButton" type="button">RESET GAME</button>
+        <!-- <button id="nextRoundButton" type="button">NEXT ROUND</button> -->
+
+    </div>
+
+    <div class="play_screen screen" style="display: none;"> <!--GAMEPLAY SCREEN-->
+
+        <div class="score_counter">
+            <h3>Score to beat: 1250</h3>
+            <h3>Your score:</h3>
+        </div>
+
+        <div class="hand">
+            <p>hand for selecting cards goes here</p>
+        </div>
+
+        <div class="active_hand">
+            <h3>This is where the player's hand name will go</h3>
+            <p>This is where the player's selected cards go</p>
+        </div>
+
+        <div class="active_hand_display">
+            <h3>Hand: <span id="validHandDisplay">None</span></h3>
+            <p>Chip Value: <span id="chipValueDisplay">0</span></p>
+            <p>Multiplier: <span id="multiplierDisplay">1</span></p>
+        </div>
+        
+        <div class="tarot_slots">
+            <p>Tarot cards go here</p>
+        </div>
+
+        <div class="shuffle_hand_counter">
+            <p>Hands Left: 5</p>
+            <p>Shuffles Left: 3</p>
+        </div>
+
+        <button class="help_button" type="button">HELP</button>
+        <button class="shuffle" type="button">Shuffle Hand</button>
+        <button class="play_hand" type="button">Play Hand</button>
+        <button id="resetButton" type="button">RESET GAME</button>
+
+    </div>
+
+    <div class="win_screen screen" style="display: none;"> <!--WIN SCREEN-->
+        <h1>YOU WIN</h1>
+        <p>You beat the blind!</p>
+
+        <button class="main_menu">MAIN MENU</button>
+
+    </div>
+
+    <div class="lose_screen screen" style="display: none;"> <!--LOSE SCREEN-->
+        <h2>YOU LOSE</h2>
+        <p>Try again.</p>
+
+        <button class="main_menu">MAIN MENU</button>
+
+    </div>
+
+    <div class="help_screen" style="display: none;"> <!--HELP DISPLAY-->
+        <h2>Help</h2>
+        <p>Welcome to Balittle!</p>
+        <p>This is a small-scale take on the hit game "Balatro" by LocalThunk, written by me for the Unit 1 project.</p>
+        <h2>The Rules:</h2>
+        <p>You have one round to play, with the goal of beating the 'blind'.</p>
+        <p>When the round starts, 8 playing cards are drawn. You must select up to 5 cards from your draw to form and play poker hands.</p>
+        <p>Each playing card has a base <span class="handNames">'chip'</span> value.<br>For instance, cards with numerical ranks (2 of spades, 5 of hearts, 10 of clubs) are worth chips according to their rank (<span class="handNames">2</span>, <span class="handNames">5</span>, <span class="handNames">10</span> respectively). Face cards are worth 10 chips, and Aces are worth 11.</p>
+        <p>Depending on the poker hand played, the total chip value of the hand will be multiplied by a set value:</p>
+        <p>
+            <span class="handNames">High Card</span>: <span class="handMults">x1</span> - Default case if there are no valid poker hands. Picks the card worth the most chips.<br>
+            <span class="handNames">Pair</span>: <span class="handMults">x2</span> - Two cards of the same rank (number).<br>
+            <span class="handNames">Two Pair</span>: <span class="handMults">x3</span> - Two sets of pairs played together.<br>
+            <span class="handNames">Three of a Kind</span>: <span class="handMults">x3</span> - Three cards of the same rank.<br>
+            <span class="handNames">Flush</span>: <span class="handMults">x5</span> - Five cards of the same suit (hearts, spades, clubs, diamonds).<br>
+            <span class="handNames">Straight</span>: <span class="handMults">x6</span> - Five cards played in consecutive order (Ex: 10, 9, 8, 7, 6 or A, K, Q, J, 10).<br>
+            <span class="handNames">Full House</span>: <span class="handMults">x7</span> - Five cards made up of a Three of a Kind and a Pair.<br>                       
+        </p>
+        <p>Before the round begins, you get to pick 3 <span class="tarot-help">tarot</span> cards out of 6 randomly drawn cards. These cards act as passives that will alter how your deck functions, such as adding <span class="handNames">chips</span> to cards or increasing <span class="handMults">multiplier</span>.</p>
+        <p>You get 5 hands to play in the round, and 3 free shuffles. If you manage to beat the target score before running out of hands, you win!</p>
+    </div>
+
+    <div class="tarot-card" data-name="fool" style="display: none;">  <!--TOOLTIPS-->
+        Fool
+        <div class="tooltip">Randomizes chip values of all selected cards (1 - 20)</div>
+    </div>
+
+    <div class="tarot-card" data-name="magician" style="display: none;">
+        Magician
+        <div class="tooltip">Doubles the chip value of all selected cards.</div>
+    </div>
+
+    <div class="tarot-card" data-name="priestess" style="display: none;">
+       Priestess
+        <div class="tooltip">Increases hand multiplier by 3.</div>
+    </div>
+
+    <div class="tarot-card" data-name="empress" style="display: none;">
+        Empress
+        <div class="tooltip">Adds 5 chips to each selected card.</div>
+    </div>
+
+    <div class="tarot-card" data-name="emperor" style="display: none;">
+        Emperor
+        <div class="tooltip">Doubles the hand multiplier.</div>
+    </div>
+
+    <div class="tarot-card" data-name="hierophant" style="display: none;">
+        Hierophant
+        <div class="tooltip">Adds 5 chips to every card with the hearts suit.</div>
+    </div>
+
+    <div class="tarot-card" data-name="chariot" style="display: none;">
+        Chariot
+        <div class="tooltip">Adds 30 chips to the highest value card in hand.</div>
+    </div>
+
+    <div class="tarot-card" data-name="strength" style="display: none;">
+        Strength
+        <div class="tooltip">Adds 2 chips to each selected card and increases hand multiplier by 1.</div>
+    </div>
+
+    <div class="tarot-card" data-name="hermit" style="display: none;">
+        Hermit
+        <div class="tooltip">If only one card is played, triples its chip value and increases hand multiplier by 1.</div>
+    </div>
+
+    <div class="tarot-card" data-name="justice" style="display: none;">
+        Justice
+        <div class="tooltip">The lowest value card in hand receives a 20-chip bonus.</div>
+    </div>
+
+    <div class="tarot-card" data-name="temperance" style="display: none;">
+        Temperance
+        <div class="tooltip">Reduces hand multiplier by 1 (minimum 1), but adds 10 chips to each selected card.</div>
+    </div>
+
+    <div class="tarot-card" data-name="judgement" style="display: none;">
+        Judgement
+        <div class="tooltip">Triples chips of every card in hand but reduces hand multiplier by 2 (minimum 1).</div>
+    </div>
+    
+    <footer>Made by Jared Street</footer>
+
+    <script src="js/deck.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ui.js"></script>
+
+</body>
+</html>
