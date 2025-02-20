@@ -1,0 +1,62 @@
+// Playing deck array
+const deck = [
+  // Hearts
+  { suit: "hearts", value: "A", chips: 11, image: "images/Normal-cards/ace_of_hearts.png" },
+  { suit: "hearts", value: "K", chips: 10, image: "images/Normal-cards/king_of_hearts.png" },
+  { suit: "hearts", value: "Q", chips: 10, image: "images/Normal-cards/queen_of_hearts.png" },
+  { suit: "hearts", value: "J", chips: 10, image: "images/Normal-cards/jack_of_hearts.png" },
+  { suit: "hearts", value: "10", chips: 10, image: "images/Normal-cards/10_of_hearts.png" },
+  { suit: "hearts", value: "9", chips: 9, image: "images/Normal-cards/9_of_hearts.png" },
+  { suit: "hearts", value: "8", chips: 8, image: "images/Normal-cards/8_of_hearts.png" },
+  { suit: "hearts", value: "7", chips: 7, image: "images/Normal-cards/7_of_hearts.png" },
+  { suit: "hearts", value: "6", chips: 6, image: "images/Normal-cards/6_of_hearts.png" },
+  { suit: "hearts", value: "5", chips: 5, image: "images/Normal-cards/5_of_hearts.png" },
+  { suit: "hearts", value: "4", chips: 4, image: "images/Normal-cards/4_of_hearts.png" },
+  { suit: "hearts", value: "3", chips: 3, image: "images/Normal-cards/3_of_hearts.png" },
+  { suit: "hearts", value: "2", chips: 2, image: "images/Normal-cards/2_of_hearts.png" },
+
+  // Diamonds
+  { suit: "diamonds", value: "A", chips: 11, image: "images/Normal-cards/ace_of_diamonds.png" },
+  { suit: "diamonds", value: "K", chips: 10, image: "images/Normal-cards/king_of_diamonds.png" },
+  { suit: "diamonds", value: "Q", chips: 10, image: "images/Normal-cards/queen_of_diamonds.png" },
+  { suit: "diamonds", value: "J", chips: 10, image: "images/Normal-cards/jack_of_diamonds.png" },
+  { suit: "diamonds", value: "10", chips: 10, image: "images/Normal-cards/10_of_diamonds.png" },
+  { suit: "diamonds", value: "9", chips: 9, image: "images/Normal-cards/9_of_diamonds.png" },
+  { suit: "diamonds", value: "8", chips: 8, image: "images/Normal-cards/8_of_diamonds.png" },
+  { suit: "diamonds", value: "7", chips: 7, image: "images/Normal-cards/7_of_diamonds.png" },
+  { suit: "diamonds", value: "6", chips: 6, image: "images/Normal-cards/6_of_diamonds.png" },
+  { suit: "diamonds", value: "5", chips: 5, image: "images/Normal-cards/5_of_diamonds.png" },
+  { suit: "diamonds", value: "4", chips: 4, image: "images/Normal-cards/4_of_diamonds.png" },
+  { suit: "diamonds", value: "3", chips: 3, image: "images/Normal-cards/3_of_diamonds.png" },
+  { suit: "diamonds", value: "2", chips: 2, image: "images/Normal-cards/2_of_diamonds.png" },
+
+  // Clubs
+  { suit: "clubs", value: "A", chips: 11, image: "images/Normal-cards/ace_of_clubs.png" },
+  { suit: "clubs", value: "K", chips: 10, image: "images/Normal-cards/king_of_clubs.png" },
+  { suit: "clubs", value: "Q", chips: 10, image: "images/Normal-cards/queen_of_clubs.png" },
+  { suit: "clubs", value: "J", chips: 10, image: "images/Normal-cards/jack_of_clubs.png" },
+  { suit: "clubs", value: "10", chips: 10, image: "images/Normal-cards/10_of_clubs.png" },
+  { suit: "clubs", value: "9", chips: 9, image: "images/Normal-cards/9_of_clubs.png" },
+  { suit: "clubs", value: "8", chips: 8, image: "images/Normal-cards/8_of_clubs.png" },
+  { suit: "clubs", value: "7", chips: 7, image: "images/Normal-cards/7_of_clubs.png" },
+  { suit: "clubs", value: "6", chips: 6, image: "images/Normal-cards/6_of_clubs.png" },
+  { suit: "clubs", value: "5", chips: 5, image: "images/Normal-cards/5_of_clubs.png" },
+  { suit: "clubs", value: "4", chips: 4, image: "images/Normal-cards/4_of_clubs.png" },
+  { suit: "clubs", value: "3", chips: 3, image: "images/Normal-cards/3_of_clubs.png" },
+  { suit: "clubs", value: "2", chips: 2, image: "images/Normal-cards/2_of_clubs.png" },
+
+  // Spades
+  { suit: "spades", value: "A", chips: 11, image: "images/Normal-cards/ace_of_spades.png" },
+  { suit: "spades", value: "K", chips: 10, image: "images/Normal-cards/king_of_spades.png" },
+  { suit: "spades", value: "Q", chips: 10, image: "images/Normal-cards/queen_of_spades.png" },
+  { suit: "spades", value: "J", chips: 10, image: "images/Normal-cards/jack_of_spades.png" },
+  { suit: "spades", value: "10", chips: 10, image: "images/Normal-cards/10_of_spades.png" },
+  { suit: "spades", value: "9", chips: 9, image: "images/Normal-cards/9_of_spades.png" },
+  { suit: "spades", value: "8", chips: 8, image: "images/Normal-cards/8_of_spades.png" },
+  { suit: "spades", value: "7", chips: 7, image: "images/Normal-cards/7_of_spades.png" },
+  { suit: "spades", value: "6", chips: 6, image: "images/Normal-cards/6_of_spades.png" },
+  { suit: "spades", value: "5", chips: 5, image: "images/Normal-cards/5_of_spades.png" },
+  { suit: "spades", value: "4", chips: 4, image: "images/Normal-cards/4_of_spades.png" },
+  { suit: "spades", value: "3", chips: 3, image: "images/Normal-cards/3_of_spades.png" },
+  { suit: "spades", value: "2", chips: 2, image: "images/Normal-cards/2_of_spades.png" }
+];

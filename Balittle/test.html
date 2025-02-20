@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarot Tooltip Test</title>
+    <style>
+        .tarot-card {
+            display: inline-block;
+            width: 100px;
+            height: 150px;
+            background-color: lightgray;
+            border: 2px solid black;
+            text-align: center;
+            line-height: 150px;
+            margin: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .tooltip {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: black;
+            color: white;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 12px;
+            white-space: nowrap;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tarot-card" data-name="fool">
+        Fool
+        <div class="tooltip">Randomizes chip values of all selected cards</div>
+    </div>
+
+    <div class="tarot-card" data-name="magician">
+        Magician
+        <div class="tooltip">Doubles the chip value of all selected cards</div>
+    </div>
+
+    <script>
+        document.querySelectorAll(".tarot-card").forEach(card => {
+            let tooltip = card.querySelector(".tooltip");
+
+            card.addEventListener("mouseenter", () => {
+                tooltip.style.display = "block";
+            });
+
+            card.addEventListener("mouseleave", () => {
+                tooltip.style.display = "none";
+            });
+        });
+    </script>
+
+</body>
+</html>
