@@ -18,9 +18,9 @@ issues, but everything functions as intended.
 
 # Tarot Poker Game Documentation
 
-#### Functions
+## Functions
 
-# Game Flow
+### Game Flow
 - `drawTarots()` - Draws 6 random tarot cards for selection
 - `displayTarots(cards)` - Displays tarot cards with tooltips for selection
 - `displaySelectedTarotsOnPlayScreen()` - Shows selected tarot cards on play screen
@@ -34,10 +34,10 @@ issues, but everything functions as intended.
 - `resetHand()` - Clears current hand and draws new cards
 - `resetGame()` - Resets all game variables and displays to initial state
 
-# Tarot Effects
+### Tarot Effects
 - `applyTarots(selectedTarots, selectedCards)` - Applies tarot card effects to the hand
 
-# Poker Hand Evaluation
+### Poker Hand Evaluation
 - `calculatePokerHand(selectedCards)` - Determines the best poker hand from selected cards
 - `isFlush(suits, selectedCards)` - Checks if hand is a flush
 - `isStraight(values, selectedCards)` - Checks if hand is a straight
@@ -47,19 +47,19 @@ issues, but everything functions as intended.
 - `isPair(values, selectedCards)` - Checks if hand has a pair
 - `isHighCard(values, selectedCards)` - Identifies the highest card in hand
 
-#### Variables
+## Variables
 
-# Game State
+### Game State
 - `selectedTarots` - Array storing the player's selected tarot cards
 - `playerScore` - Current player score
 - `handsRemaining` - Number of hands remaining to play (starts at 5)
 - `shufflesRemaining` - Number of shuffles remaining (starts at 3)
 
-# Card Collections
+### Card Collections
 - `tarot` - Array of tarot card objects with name and image properties
 - `deck` - Array of playing card objects with suit, value, chips, and image properties
 
-# DOM Elements
+### DOM Elements
 - `startGameButton` - Button to start the game
 - `startScreen` - The initial game screen
 - `playScreen` - The main gameplay screen
@@ -72,34 +72,34 @@ issues, but everything functions as intended.
 - `mainMenuButton` - Button to return to main menu
 - `helpScreen` - Screen with game instructions
 
-#### Event Listeners
+## Event Listeners
 
-# Game Navigation
+### Game Navigation
 - `startGameButton.addEventListener("click", ...)` - Starts game and shows tarot selection
 - `selectButton.addEventListener("click", ...)` - Confirms tarot selection and starts play
 - `resetButton.forEach(button => button.addEventListener("click", resetGame))` - Resets the game
 - `mainMenuButton.forEach(button => button.addEventListener("click", ...))` - Returns to main menu
 
-# Gameplay Actions
+### Gameplay Actions
 - `shuffleButton.addEventListener("click", ...)` - Shuffles cards if shuffles remain
 - `playHandButton.addEventListener("click", ...)` - Plays the current hand if cards are selected
 
-# Help Display
+### Help Display
 - `document.querySelectorAll(".help_button").forEach(button => button.addEventListener("click", ...))` - Toggles help screen
 - `document.querySelector(".help_screen").addEventListener("click", ...)` - Closes help screen when clicked
 
-# Card Interactions
+### Card Interactions
 - Card click events in `displayTarots()` - Handles tarot card selection
 - Card click events in `displayCards()` - Handles playing card selection
 
 ## Game Mechanics
 
-# Scoring System
+### Scoring System
 - Base score = Sum of chip values of valid cards in hand
 - Final score = Base score × Hand multiplier
 - Win condition: Reach 1250 points before running out of hands
 
-# Hand Types and Multipliers
+### Hand Types and Multipliers
 - High Card: 1×
 - Pair: 2×
 - Two Pair: 3×
